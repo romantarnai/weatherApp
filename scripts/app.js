@@ -86,8 +86,9 @@ window.addEventListener("DOMContentLoaded", () => {
         const myMatches = document.getElementsByClassName("match")
         for (let my of myMatches) {
             my.addEventListener("click", e => {
-                let ct = e.target.innerText.substr(e.target.innerText.length - 2, e.target.innerText.length)
-                let newStr = e.target.innerText.substr(0, e.target.innerText.length - 2)
+                let fixed = e.target.innerText.trim()   // preventing any unwanted whitespaces
+                let ct = fixed.substr(fixed.length - 2, fixed.length)
+                let newStr = fixed.substr(0, fixed.length - 2)
                 search.value = newStr
                 lat = states.find(x => x.name == newStr && x.country == ct).lat
                 lon = states.find(x => x.name == newStr && x.country == ct).lng
