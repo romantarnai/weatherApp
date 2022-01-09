@@ -1,0 +1,290 @@
+/* 
+===============
+ global styles
+===============
+*/
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background: black;
+  background: linear-gradient(38deg, rgba(0, 0, 0, 0.837973) 0%, #18167c 74%);
+}
+
+/* 
+===============
+ main styling
+===============
+*/
+h1 {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.weather_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  width: 80%;
+  margin: auto;
+  margin-top: 4em;
+}
+
+.weather_wrap .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  margin-bottom: 2em;
+}
+
+.weather_wrap .input .main_input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 0.5em;
+          column-gap: 0.5em;
+}
+
+.weather_wrap .input #input {
+  color: white;
+  border-radius: 5px;
+  padding: 7px;
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: 2px solid white;
+  width: 20em;
+}
+
+.weather_wrap .input #input::-webkit-input-placeholder {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.692);
+}
+
+.weather_wrap .input #input:-ms-input-placeholder {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.692);
+}
+
+.weather_wrap .input #input::-ms-input-placeholder {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.692);
+}
+
+.weather_wrap .input #input::placeholder {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.692);
+}
+
+.weather_wrap .input button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  border: 1px solid white;
+  background: none;
+  color: white;
+  border-radius: 5px;
+  padding: px;
+}
+
+.weather_wrap .input button:hover {
+  background: white;
+  color: black;
+}
+
+.weather_wrap .input button:hover img {
+  -webkit-filter: invert(0%) sepia(5%) saturate(23%) hue-rotate(333deg) brightness(93%) contrast(100%);
+          filter: invert(0%) sepia(5%) saturate(23%) hue-rotate(333deg) brightness(93%) contrast(100%);
+}
+
+.weather_wrap .input button img {
+  width: 32px;
+  height: 32px;
+  -webkit-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(335deg) brightness(104%) contrast(103%);
+          filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(335deg) brightness(104%) contrast(103%);
+}
+
+.weather_wrap .input button:disabled {
+  cursor: default;
+  background-color: grey;
+}
+
+.weather_wrap .input button:disabled:hover img {
+  -webkit-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(335deg) brightness(104%) contrast(103%);
+          filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(335deg) brightness(104%) contrast(103%);
+}
+
+.weather_wrap .input #match-list {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 0.1em;
+  height: 12em;
+  overflow: auto;
+}
+
+.match {
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.match:hover {
+  background-color: white;
+  color: black;
+}
+
+.match h4 {
+  margin: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  /* Standard */
+}
+
+.ct {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.753);
+  margin-left: 15px;
+}
+
+.invis {
+  visibility: hidden;
+}
+
+.timezone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 5em;
+          column-gap: 5em;
+}
+
+.timezone h2 {
+  font-size: 2rem;
+}
+
+.timezone h2::after {
+  content: attr(data-after);
+  margin-left: 10px;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.685);
+}
+
+.tempature {
+  font-size: 1.65rem;
+}
+
+.tempature #message {
+  margin-top: 3em;
+  font-size: 1.1rem;
+}
+
+/* 
+===============
+ responsivnes
+===============
+*/
+@media only screen and (max-width: 620px) {
+  h1 {
+    font-size: 2.1rem;
+  }
+  .weather_wrap .input .main_input {
+    -webkit-column-gap: 0.3em;
+            column-gap: 0.3em;
+  }
+  .weather_wrap .input #input {
+    width: 12em;
+    font-size: 1rem;
+  }
+  .weather_wrap .input #input::-webkit-input-placeholder {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.692);
+  }
+  .weather_wrap .input #input:-ms-input-placeholder {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.692);
+  }
+  .weather_wrap .input #input::-ms-input-placeholder {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.692);
+  }
+  .weather_wrap .input #input::placeholder {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.692);
+  }
+  .weather_wrap .input button img {
+    width: 24px;
+    height: 24px;
+  }
+  .weather_wrap .input #match-list {
+    height: 10em;
+  }
+  .timezone {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .timezone h2 {
+    font-size: 1.6rem;
+  }
+  .timezone h2::after {
+    font-size: 0.96rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */

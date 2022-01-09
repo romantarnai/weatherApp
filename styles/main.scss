@@ -1,0 +1,192 @@
+@import "./variables";
+
+/* 
+===============
+ global styles
+===============
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    margin: 0;
+    background: rgb(0,0,0);
+    background: linear-gradient(38deg, rgba(0,0,0,0.8379726890756303) 0%, rgb(24, 22, 124) 74%);
+}
+
+/* 
+===============
+ main styling
+===============
+*/
+h1{
+    color: white;
+    font-size: $titleFontSize;
+    text-align: center;
+}
+.weather_wrap{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    width: 80%;
+    margin: auto;
+    margin-top: $weatherTopMargin;
+    // input pole
+    .input{
+        display: flex;
+        flex-direction: column;
+        height: min-content;
+        margin-bottom: 2em;
+        .main_input{
+            display: flex;
+            flex-direction: row;
+            column-gap: 0.5em;
+        }
+        #input{
+            color: white;
+            border-radius: 5px;
+            padding: 7px;
+            font-size: 1.2rem;
+            background-color: transparent;
+            border: 2px solid white;
+            width: 20em;
+            &::placeholder{
+                text-align: center;
+                color: rgba(255, 255, 255, 0.692);
+            }
+        }
+        button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: 1px solid white;
+            background: none;
+            color: white;
+            border-radius: 5px;
+            padding: px;
+            &:hover{
+                background: white;
+                color: black;
+                img{
+                    filter: invert(0%) sepia(5%) saturate(23%) hue-rotate(333deg) brightness(93%) contrast(100%);
+                }
+            }
+            img{
+                width: 32px;
+                height: 32px;
+                filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(335deg) brightness(104%) contrast(103%);
+            }
+            &:disabled{
+                cursor: default;
+                background-color: grey;
+                &:hover img{
+                    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(335deg) brightness(104%) contrast(103%);
+                }
+            }
+        }
+        #match-list{
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            row-gap: 0.1em;
+            height: 12em;
+            overflow: auto;
+        }
+    }
+}
+.match{ // match from javascript
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid white;
+    cursor: pointer;
+    &:hover{
+        background-color: white;
+        color: black;
+    }
+    h4{
+        margin: 10px;
+        user-select: none; /* Standard */
+    }
+}
+.ct{
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.753);
+    margin-left: 15px;
+}
+.invis{
+    visibility: hidden;
+}
+.timezone{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 5em;
+    h2{
+        font-size: $timeZoneFontSize;
+        &::after{
+            content: attr(data-after);
+            margin-left: 10px;
+            font-size: $timeZoneFontSize * 0.6;
+            color: rgba(255, 255, 255, 0.685);
+        }
+    }
+}
+.tempature{
+    font-size: $normalFontSize * 1.5;
+    #message{
+        margin-top: 3em;
+        font-size: $normalFontSize;
+    }
+}
+
+/* 
+===============
+ responsivnes
+===============
+*/
+@media only screen and (max-width: 620px) {
+    h1{
+        font-size: $titleFontSizeSm;
+    }
+    .weather_wrap{
+        // input pole
+        .input{
+            .main_input{
+                column-gap: 0.3em;
+            }
+            #input{
+                width: 12em;
+                font-size: 1rem;
+                &::placeholder{
+                    text-align: center;
+                    color: rgba(255, 255, 255, 0.692);
+                }
+            }
+            button{
+                img{
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+            #match-list{
+                height: 10em;
+            }
+        }
+    }
+    .timezone{
+        flex-direction: column;
+        h2{
+            font-size: $timeZoneFontSizeSm;
+            &::after{
+                font-size: $timeZoneFontSizeSm * 0.6;
+            }
+        }
+    }
+}

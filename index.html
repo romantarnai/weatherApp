@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--favicon--->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!----------->
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/app.js"></script>
+    <title>WeatherApp</title>
+</head>
+
+<body>
+    <h1>What's the weather?</h1>
+
+    <div class="weather_wrap">
+        <div class="input">
+            <div class="main_input">
+                <input placeholder="name of city" id="input" type="text">
+                <button disabled="true" id="btn"><img src="./images/magnifying-glass-svgrepo-com.svg"></button>
+            </div>
+            <div id="match-list"></div>
+        </div>
+
+        <div class="timezone">
+            <h2 id="tz">Timezone</h2>
+            <img id="icon" src="#" alt="icon">
+        </div>
+        <div class="tempature">
+            <p><span id="temp-value">25</span><span>°C</span></p>
+            <p id="message">It's cloudy day</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+</body>
+
+
+
+</html>
