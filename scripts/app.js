@@ -52,7 +52,7 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 
     const searchStates = async searchText => {
-        const res = await fetch('../data/cities.json')
+        const res = await fetch('scripts/cities.json')
         const states = await res.json()
 
         // get matches to current text input
